@@ -22,7 +22,7 @@ export default function App() {
         <div style={{ color: "#f87171" }}>Error: {craftedItem.error}</div>
       )}
 
-      <h2>Potion of Recklessness</h2>
+      <h1>Potion of Recklessness</h1>
 
       <PriceTable rows={craftedItem.rows} />
 

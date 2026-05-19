@@ -12,7 +12,6 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1>Crafted Item:</h1>
       {loading && <div style={{ opacity: 0.6 }}>Loading...</div>}
       {error && <div style={{ color: "#f87171" }}>Error: {error}</div>}
       <PriceTableMats rows={rows} />
