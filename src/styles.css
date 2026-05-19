@@ -74,33 +74,16 @@ button {
   scroll-snap-type: x mandatory;
 }
 
-.price-card .time {
-  font-size: 11px;
-  color: #6b6878;
-  font-family: monospace;
-}
-
-.price-card .price {
-  font-size: 14px;
-  font-weight: 600;
-  color: #c9a84c;
-}
-
 .price-grid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 4px;
-  margin-top: 10px;
-}
-
-.price-card {
-  position: relative;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
 }
 
 .date {
-  font-size: 10px;
+  font-size: 9px;
   opacity: 0.7;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .tooltip-wrapper {
@@ -132,18 +115,24 @@ button {
 }
 
 .price-card {
+  position: relative;
+
   background: #1c1c24;
   border: 1px solid #333;
-  padding: 8px;
-  border-radius: 4px;
+
+  padding: 4px;
+  border-radius: 3px;
+
   text-align: center;
   min-width: 0;
+
+  font-size: 11px;
 }
 
 .price-card .time {
-  font-size: 12px;
-  margin-bottom: 2px;
-  color: white;
+  font-size: 11px;
+  color: #6b6878;
+  font-family: monospace;
 }
 
 .price-card .price {
@@ -191,13 +180,63 @@ button {
 
 .table-chart-layout {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12px;
   align-items: start;
 }
 
 .table-section {
   min-width: 0;
+}
+
+.table-section {
+  grid-column: span 2; /* 50% */
+  min-width: 0;
+}
+
+.chart-section {
+  grid-column: span 2; /* 50% */
+  min-width: 0;
+}
+
+.main-item-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* chart + table side by side */
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.main-chart {
+  min-height: 300px;
+}
+
+.main-table {
+  min-height: 300px;
+}
+
+/* ===== MATERIAL GRID (2x2) ===== */
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* ===== EACH MATERIAL PANEL ===== */
+.material-panel {
+  background: #15151c;
+  border: 1px solid #2a2a35;
+  border-radius: 10px;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.material-title {
+  margin: 0;
+  font-size: 14px;
+  color: #e8e6e1;
 }
 
 @media (max-width: 1100px) {

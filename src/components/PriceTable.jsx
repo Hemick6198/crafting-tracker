@@ -16,7 +16,7 @@ function formatGold(copper) {
     .join(" ");
 }
 
-const PAGE_SIZE = 40;
+const PAGE_SIZE = 25;
 
 export default function PriceTable({ rows }) {
   const [page, setPage] = useState(0);
@@ -104,11 +104,11 @@ export default function PriceTable({ rows }) {
   };
 
   if (!data.length) {
-    return <div style={{ opacity: 0.7 }}>No historical data available.</div>;
+    return <div style={{ opacity: 0.7 }}>No data available.</div>;
   }
 
   return (
-    <div style={{ marginTop: 20 }}>
+    <div>
       {/* Heatmap legend */}
       <div
         style={{
@@ -153,9 +153,9 @@ export default function PriceTable({ rows }) {
 
               <div
                 style={{
-                  fontSize: "11px",
+                  fontSize: "10px",
                   color: "#b8b4c0",
-                  marginTop: "4px",
+                  marginTop: "2px",
                 }}
               >
                 Qty: {(r.quantity ?? 0).toLocaleString()}

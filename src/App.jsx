@@ -1,8 +1,6 @@
 import { useUndermineData } from "./hooks/useUndermineData";
-
 import PriceTable from "./components/PriceTable";
 import PriceChart from "./components/PriceChart";
-
 import { MATERIALS } from "./data/materials";
 
 const ITEM_ID = 241288;
@@ -15,69 +13,54 @@ export default function App() {
 
   return (
     <div className="container">
-      {craftedItem.loading && <div style={{ opacity: 0.6 }}>Loading...</div>}
-
-      {craftedItem.error && (
-        <div style={{ color: "#f87171" }}>Error: {craftedItem.error}</div>
-      )}
-
+      {/* HEADER */}
       <h1>Potion of Recklessness</h1>
 
-      <div className="table-chart-layout">
-        <div className="table-section">
-          <PriceTable rows={craftedItem.rows} />
+      {/* =========================
+          MAIN ITEM (STANDALONE)
+      ========================= */}
+      <div className="main-item-grid">
+        <div className="main-chart">
+          <PriceChart rows={craftedItem.rows} />
         </div>
 
-        <div className="chart-section">
-          <PriceChart rows={craftedItem.rows} title="Potion Price Trend" />
+        <div className="main-table">
+          <PriceTable rows={craftedItem.rows} />
         </div>
       </div>
 
-      <h1
-        style={{
-          marginTop: 60,
-          marginBottom: 40,
-        }}
-      >
-        Materials
-      </h1>
+      {/* =========================
+          MATERIALS SECTION
+      ========================= */}
+      <h2 style={{ marginTop: 40 }}>Materials</h2>
 
-      {MATERIALS.map((mat) => (
-        <MaterialTable key={mat.id} itemId={mat.id} name={mat.name} />
-      ))}
+      <div className="materials-grid">
+        {MATERIALS.map((mat) => (
+          <MaterialPanel key={mat.id} itemId={mat.id} name={mat.name} />
+        ))}
+      </div>
     </div>
   );
 }
 
-function MaterialTable({ itemId, name }) {
+/* =========================
+   MATERIAL PANEL COMPONENT
+========================= */
+function MaterialPanel({ itemId, name }) {
   const { rows, loading, error } = useUndermineData({
     itemId,
     region: "us",
   });
 
   return (
-    <div style={{ marginTop: 50 }}>
-      <h2
-        style={{
-          marginBottom: 20,
-        }}
-      >
-        {name}
-      </h2>
+    <div className="material-panel">
+      <h3 className="material-title">{name}</h3>
 
       {loading && <div style={{ opacity: 0.6 }}>Loading...</div>}
-
       {error && <div style={{ color: "#f87171" }}>Error: {error}</div>}
 
-      <div className="table-chart-layout">
-        <div className="table-section">
-          <PriceTable rows={rows} />
-        </div>
-
-        <div className="chart-section">
-          <PriceChart rows={rows} title={`${name} Price Trend`} />
-        </div>
-      </div>
+      <PriceChart rows={rows} />
+      <PriceTable rows={rows} />
     </div>
   );
 }

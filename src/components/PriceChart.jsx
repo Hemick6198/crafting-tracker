@@ -100,7 +100,7 @@ export default function PriceChart({ rows }) {
     <div className="chart-card">
       <h3 className="chart-title">Price Trend</h3>
 
-      <div style={{ height: 320 }}>
+      <div style={{ height: 200, paddingTop: 24 }}>
         <Line data={chartData} options={options} />
       </div>
     </div>
