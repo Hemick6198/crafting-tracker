@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1>Potion of Recklessness</h1>
+      <h1 className="page-title">Potion of Recklessness</h1>
 
       <div className="main-item-grid">
         <div className="main-chart">
