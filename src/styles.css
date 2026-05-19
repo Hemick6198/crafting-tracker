@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  background: #0d0d0f;
+  color: #e8e6e1;
+  font-family: Inter, sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.setup {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  background: #1c1c24;
+  border: 1px solid #333;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.metric {
+  background: #1c1c24;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  text-align: center;
+}
+
+.metric .label {
+  font-size: 12px;
+  color: #8b8896;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.metric .value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8e6e1;
+}
+
+.price-strip {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 0;
+
+  scroll-snap-type: x mandatory;
+}
+
+.price-card .time {
+  font-size: 11px;
+  color: #6b6878;
+  font-family: monospace;
+}
+
+.price-card .price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c9a84c;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.price-card {
+  position: relative;
+}
+
+.date {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.tooltip-wrapper {
+  position: relative;
+}
+
+.tooltip-wrapper .tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #111;
+  border: 1px solid #333;
+  padding: 6px 8px;
+  border-radius: 6px;
+
+  font-size: 11px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.15s ease;
+  z-index: 10;
+}
+
+.tooltip-wrapper:hover .tooltip {
+  opacity: 1;
+}
+
+.price-card {
+  background: #1c1c24;
+  border: 1px solid #333;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 0;
+}
+
+.price-card .time {
+  font-size: 12px;
+  margin-bottom: 2px;
+  color: white;
+}
+
+.price-card .price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c9a84c;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.page-info {
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.tooltip-wrapper {
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .price-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .price-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
