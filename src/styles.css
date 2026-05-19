@@ -171,10 +171,8 @@ button {
 }
 
 .chart-title {
-  margin: 0 0 14px;
-
-  font-size: 18px;
-
+  margin: 0 0 4px;
+  font-size: 14px;
   color: #f3f4f6;
 }
 
@@ -199,12 +197,12 @@ button {
   min-width: 0;
 }
 
-.main-item-grid {
+/* .main-item-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* chart + table side by side */
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-bottom: 30px;
-}
+} */
 
 .main-chart {
   min-height: 300px;
@@ -212,6 +210,7 @@ button {
 
 .main-table {
   min-height: 300px;
+  padding-top: 12px;
 }
 
 /* ===== MATERIAL GRID (2x2) ===== */
@@ -235,7 +234,7 @@ button {
 
 .material-title {
   margin: 0;
-  font-size: 14px;
+  font-size: 24px;
   color: #e8e6e1;
 }
 

@@ -13,25 +13,18 @@ export default function App() {
 
   return (
     <div className="container">
-      {/* HEADER */}
       <h1>Potion of Recklessness</h1>
 
-      {/* =========================
-          MAIN ITEM (STANDALONE)
-      ========================= */}
       <div className="main-item-grid">
         <div className="main-chart">
           <PriceChart rows={craftedItem.rows} />
         </div>
 
         <div className="main-table">
-          <PriceTable rows={craftedItem.rows} />
+          <PriceTable rows={craftedItem.rows} pageSize={50} columns={10} />
         </div>
       </div>
 
-      {/* =========================
-          MATERIALS SECTION
-      ========================= */}
       <h2 style={{ marginTop: 40 }}>Materials</h2>
 
       <div className="materials-grid">
@@ -43,9 +36,6 @@ export default function App() {
   );
 }
 
-/* =========================
-   MATERIAL PANEL COMPONENT
-========================= */
 function MaterialPanel({ itemId, name }) {
   const { rows, loading, error } = useUndermineData({
     itemId,
@@ -54,7 +44,7 @@ function MaterialPanel({ itemId, name }) {
 
   return (
     <div className="material-panel">
-      <h3 className="material-title">{name}</h3>
+      <h1 className="material-title">{name}</h1>
 
       {loading && <div style={{ opacity: 0.6 }}>Loading...</div>}
       {error && <div style={{ color: "#f87171" }}>Error: {error}</div>}
