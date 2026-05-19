@@ -26,7 +26,7 @@ export default function App() {
 
       <PriceTable rows={craftedItem.rows} />
 
-      <h2 style={{ marginTop: 40 }}>Materials</h2>
+      <h1 style={{ marginTop: 40, marginBottom: 60 }}>Materials:</h1>
 
       {MATERIALS.map((mat) => (
         <MaterialTable key={mat.id} itemId={mat.id} name={mat.name} />

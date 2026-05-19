@@ -12,11 +12,9 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1>Potion of Recklessness</h1>
-
+      <h1>Crafted Item:</h1>
       {loading && <div style={{ opacity: 0.6 }}>Loading...</div>}
       {error && <div style={{ color: "#f87171" }}>Error: {error}</div>}
-      {/* <PriceTable rows={rows} /> */}
       <PriceTableMats rows={rows} />
     </div>
   );
